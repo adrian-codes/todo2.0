@@ -1,0 +1,99 @@
+body{
+    font-size:14px;
+    position: relative;
+}
+#main_header{
+    height: 60px;
+    border-bottom: 1px solid black;
+    position: relative;
+    min-height: 10vh;
+}
+.logo{
+    float: left;
+    margin: 10px;
+}
+.logo_large{
+    height: 40px;
+    width: auto;
+}
+#main-nav{
+    text-align: center;
+    position: absolute;
+    height: 100%;
+    right: 30px;
+    top: 0px;
+    
+}
+#main-nav ul{
+    width: 100%;
+    height: 100%;
+}
+#main-nav ul li{
+    list-style-type: none;
+    margin: 0px 5px 0px 0px;
+    padding: 0px;
+    display: inline-block;
+}
+#main-nav > ul > li > a:hover{
+    color: green;
+}
+
+#main-footer{
+    border-top: 1px solid black;
+    min-height: 10vh;
+    text-align: center;
+ 
+}
+
+#main-content{
+    min-height: 80vh;
+    position: relative;
+}
+#todo-add{
+    position: absolute; 
+    height: 30vh;
+    width: 38%;
+    display: inline-block;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+.inputs {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+#todo-display{
+    
+    position: relative;
+    width: 60%;
+    display: inline-block;
+    height: auto;
+}
+form {
+    height: 200px;
+}
+#display_container{
+    position: relative;
+}
+
+#container_div {
+    border: 2px solid lightgray;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.title {
+    font-weight: bold;
+}
+.btn {
+    position: relative;
+    float: right;
+    top: -45px;
+    right: 10px;  
+}
+.deleting {
+   background-color: #f2dede;   
+}
