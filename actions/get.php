@@ -3,10 +3,10 @@
     $sql = 'SELECT * FROM todo';
     $results = mysqli_query($con, $sql);
    
-    $outputArray = [];//make an output array
+    $outputArray = [];
     $todoList = [];
         
-    $html = []; //make an variable to hold our html output, set it to a blank string
+    $html = []; 
 
     while($todo_row = mysqli_fetch_assoc($results)){
 

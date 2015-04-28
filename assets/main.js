@@ -1,23 +1,27 @@
 $('document').ready(function () {
     var main_content = $('#main_content');
-
-    $("#save_task").click(function () { //add click handler to save_task button
-
+    //add click handler to save_task button
+    $("#save_task").click(function () { 
+        //get all the values from the form and add them to our data object for sending
         var todoadd = $("#todo-add");
         var form_data = {
                 title: todoadd.find("input[name=title]").val(),
                 date: todoadd.find("input[name=date]").val(),
                 details: todoadd.find("textarea[name=details]").val(),
-            } //get all the values from the form and add them to our data object for sending
+            } 
+        
+        //send our data to the add.php file
         $.ajax({
-            url: 'actions/add.php', //send our data to the add.php file
-            data: form_data, //give it the form data
-            dataType: 'json', //expect json data back
-            cache: false, //do not let the response be cached
-            method: 'POST', //use POST to send it
-            success: function (data) { //and do something when the response comes back
-                console.log(data); //success is achieved!
-
+            url: 'actions/add.php', 
+            data: form_data, 
+            dataType: 'json', 
+            cache: false, 
+            method: 'POST', 
+            success: function (data) { 
+                console.log(data);
+                todoadd.find("input[name=title]").val(" ");
+                todoadd.find("input[name=date]").val(" ");
+                todoadd.find("textarea[name=details]").val(" ");
                 $("#display_refresh").click();
             }
         });
@@ -25,14 +29,16 @@ $('document').ready(function () {
 
     $("#display_refresh").click(function () { //add a click handler to our data display button
 
+        //get our data from the get.php file
         $.ajax({
-            url: 'actions/get.php', //get our data from the get.php file
-            dataType: 'json', //expect json data back from get.php
-            cache: false, //do not cache the result
-            method: 'POST', //use the post method
-            success: function (data) { //do something when we get data back
+            url: 'actions/get.php', 
+            dataType: 'json',
+            cache: false, 
+            method: 'POST', 
+            success: function (data) { 
                 if (data.success) {
-                    $("#todo-display > .display_container").html(data.html); //take the html object of the data object, and put it into the display container
+                    //take the html object of the data object, and put it into the display container
+                    $("#todo-display > .display_container").html(data.html); 
                 }
             }
         });
